@@ -283,6 +283,55 @@ body.entered .tag{opacity:1;transform:none}
 .fHud .bar2 i{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--rec)}
 .fHud b{color:var(--paper);font-weight:500}
 
+/* ======================================================================= ad */
+.ad{position:relative;height:330vh}
+.adPin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#050405}
+.adSeq img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:0;filter:brightness(1.4) contrast(1.08)}
+.adSeq img.on{opacity:1}
+.adShade{position:absolute;inset:0;background:linear-gradient(to right,rgba(5,4,5,.85),rgba(5,4,5,.15) 55%,rgba(5,4,5,.45)),linear-gradient(to top,rgba(5,4,5,.92),transparent 42%)}
+.adChap{position:absolute;top:96px;left:var(--pad)}
+.adLines{position:absolute;left:var(--pad);top:44%;font-size:clamp(84px,12vw,210px);height:1em}
+.adL{position:absolute;left:0;top:0;margin:0;white-space:nowrap;font-size:1em;opacity:0;transform:translateY(.22em);transition:opacity .45s,transform .7s var(--ease)}
+.adL.on{opacity:1;transform:none}
+.adL small{display:block;margin-top:.3em;font-family:var(--mono);font-weight:400;font-stretch:100%;font-size:12px;letter-spacing:.2em;color:var(--soft)}
+.adEnd{position:absolute;left:var(--pad);bottom:11svh;opacity:0;transform:translateY(30px);transition:opacity .7s,transform .9s var(--ease)}
+.adEnd.on{opacity:1;transform:none}
+.adEnd h2{margin:14px 0 0;font-size:clamp(84px,11vw,200px)}
+.adEnd h2 .ser{color:var(--rec)}
+.adEnd .tg{margin:12px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(30px,3vw,46px)}
+.adHud{position:absolute;left:var(--pad);right:var(--pad);bottom:24px;display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.adHud b{color:var(--paper);font-weight:500}
+.adCase{padding:130px var(--pad) 90px}
+.acGrid{display:grid;grid-template-columns:minmax(300px,4.6fr) 7fr;gap:6vw;align-items:start}
+.acPoster{position:sticky;top:90px;margin:0}
+.acPoster img{width:100%;height:auto;border-radius:6px;box-shadow:0 50px 100px -40px rgba(255,45,63,.4),0 0 0 1px rgba(255,255,255,.08)}
+.acPoster figcaption{margin-top:14px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.acPoster figcaption a:hover{color:var(--paper)}
+.acT{margin:18px 0 0;font-size:clamp(76px,9vw,170px)}
+.acMeta{margin:16px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);line-height:1.7}
+.acMeta b{color:var(--gold);font-weight:500}
+.teaser{position:relative;display:block;width:100%;aspect-ratio:16/9;margin-top:34px;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.teaser video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.teaser::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65),transparent 50%)}
+.tPlay{position:absolute;left:20px;bottom:18px;z-index:1;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.tPlay i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--rec);font-style:normal;font-size:16px;transition:transform .5s var(--ease)}
+.teaser:hover .tPlay i{transform:scale(1.12)}
+.acCols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px}
+.acCols h5{margin:0 0 8px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:28px}
+.acCols p{margin:0;font-size:15px;line-height:1.65;color:var(--soft)}
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.beat{display:block;text-align:left}
+.beat img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;filter:brightness(1.15);transition:transform .6s var(--ease)}
+.beat:hover img{transform:scale(1.03)}
+.beat b{display:block;margin-top:10px;font-family:var(--disp);font-weight:800;font-stretch:70%;font-size:22px;text-transform:uppercase}
+.beat b span{font-family:var(--mono);font-size:10px;font-weight:400;font-stretch:100%;letter-spacing:.16em;color:var(--rec);margin-right:8px;vertical-align:middle}
+.beat em{display:block;margin-top:4px;font-style:normal;font-size:13.5px;line-height:1.5;color:var(--soft)}
+.kv{display:flex;gap:22px;align-items:center;margin-top:34px;padding:18px;border-radius:12px;background:var(--ink3);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.kv img{width:120px;height:auto;border-radius:4px;flex:0 0 auto}
+.kv p{margin:8px 0 0;font-size:14.5px;line-height:1.6;color:var(--soft)}
+.kv .chap{margin:0}
+.mVid video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+
 /* strips */
 .strips{position:relative;padding:70px 0;overflow:hidden}
 .strip{position:relative;margin:0 -6vw;background:#121116;padding:10px 0;box-shadow:0 0 0 1px rgba(255,255,255,.05)}
@@ -460,6 +509,16 @@ body.entered .tag{opacity:1;transform:none}
   .spinB{width:84px;height:84px}.spinB svg{font-size:9.4px}.spinB span{width:36px;height:36px}
   .hEnd{margin-top:30px}
   .fHud{display:none}
+  .ad{height:280vh}
+  .adSeq img{object-fit:contain;object-position:50% 36%}
+  .adLines{font-size:17vw;top:40%}
+  .adEnd{bottom:13svh}
+  .adCase{padding:90px 16px 60px}
+  .acGrid{grid-template-columns:1fr;gap:40px}
+  .acPoster{position:relative;top:auto;max-width:440px}
+  .acCols{grid-template-columns:1fr}
+  .board{grid-template-columns:repeat(2,1fr)}
+  .kv{flex-direction:column;align-items:flex-start}
   .sheet{padding:80px 10px 30px}
   .shHead{padding:0 6px}
   .chips{justify-content:flex-start}
@@ -499,6 +558,8 @@ html.rm .track{flex-direction:column;align-items:stretch;transform:none!importan
 html.rm .hf{width:100%;height:auto;aspect-ratio:16/9}
 html.rm .hIntro,html.rm .hEnd{width:auto}
 html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
+html.rm .ad{height:auto}
+html.rm .adPin{position:relative}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .dust,body::before{display:none}
@@ -536,6 +597,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
   <a class="brand" href="#top" data-to="top"><i></i>Rahul Ranwa</a>
   <nav class="links" aria-label="Sections">
     <a href="#prime" data-to="prime">Prime</a>
+    <a href="#ad" data-to="ad">Ad film</a>
     <a href="#films" data-to="films">Films</a>
     <a href="#frames" data-to="frames">Frames</a>
     <a href="#about" data-to="about">About</a>
@@ -545,10 +607,11 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
 </header>
 <div class="menu" id="menu">
   <a href="#prime" data-to="prime"><span>01</span>Prime</a>
-  <a href="#films" data-to="films"><span>02</span>Films</a>
-  <a href="#frames" data-to="frames"><span>03</span>Frames</a>
-  <a href="#about" data-to="about"><span>04</span>About</a>
-  <a href="#contact" data-to="contact"><span>05</span>Contact</a>
+  <a href="#ad" data-to="ad"><span>02</span>Ad film</a>
+  <a href="#films" data-to="films"><span>03</span>Films</a>
+  <a href="#frames" data-to="frames"><span>04</span>Frames</a>
+  <a href="#about" data-to="about"><span>05</span>About</a>
+  <a href="#contact" data-to="contact"><span>06</span>Contact</a>
 </div>
 <div class="ph" id="ph" aria-hidden="true"><i class="phHead" id="phHead"></i></div>
 
@@ -610,12 +673,56 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
   </div>
 </section>
 
+<!-- ==================================================================== AD -->
+<section class="ad" id="ad" aria-label="Ad film: Bank of Lanka">
+  <div class="adPin" id="adPin">
+    <div class="adSeq" id="adSeq"></div>
+    <div class="adShade"></div>
+    <p class="chap adChap"><i></i><b>Reel 02</b> · Ad film · WISH</p>
+    <div class="adLines" aria-hidden="true">
+      <h3 class="adL d">Blind trust.<small>Scam tactic 01 / 04 · Lack of verification</small></h3>
+      <h3 class="adL d">Fear.<small>Scam tactic 02 / 04</small></h3>
+      <h3 class="adL d">Urgency.<small>Scam tactic 03 / 04</small></h3>
+      <h3 class="adL d">FOMO.<small>Scam tactic 04 / 04</small></h3>
+    </div>
+    <div class="adEnd" id="adEnd">
+      <p class="chap"><i></i><b>Gold</b> · General Championship · Ad design 2025</p>
+      <h2 class="d">Bank of <span class="ser">Lanka.</span></h2>
+      <p class="tg">Ten heads. One OTP.</p>
+    </div>
+    <div class="adHud"><span>Fr <b id="adFr">01</b> / 18 · <span id="adTc">00:26</span></span><span>Scroll to multiply</span></div>
+  </div>
+</section>
+<section class="adCase" id="adCase" aria-labelledby="acT">
+  <div class="acGrid">
+    <figure class="acPoster"><img src="assets/films/bank-of-lanka/poster.webp" alt="Poster for Bank of Lanka, an ad film for WISH" loading="lazy" width="1200" height="1800"><figcaption><span>Film poster</span><a href="assets/films/bank-of-lanka/poster-hq.jpg" target="_blank" rel="noopener">Full size ↗</a></figcaption></figure>
+    <div>
+      <p class="chap"><i></i><b>Case study</b> · WISH · 2025</p>
+      <h2 class="acT d" id="acT">Bank of Lanka</h2>
+      <p class="acMeta">Scam-awareness ad film · 0:59<br><b>Gold</b> · General Championship ad design, IIT Kharagpur</p>
+      <button class="teaser" type="button" data-play="bank-of-lanka" data-cursor="Play" aria-label="Watch the Bank of Lanka ad">
+        <video id="adTeaser" muted loop playsinline preload="none" poster="assets/films/bank-of-lanka/08.webp"><source src="assets/video/gc-teaser.mp4" type="video/mp4"></video>
+        <span class="tPlay"><i>▶</i>Watch the ad · 0:59 · sound on</span>
+      </button>
+      <div class="acCols">
+        <div><h5>The brief</h5><p>Get people to stop handing over OTPs, CVVs and personal details on calls. One line had to stick: banks will never ask for them.</p></div>
+        <div><h5>The idea</h5><p>Retell the Ramayana as a phone scam. Sita gets an OTP from the Bank of Lanka, a holy man at the door wants it, and the Lakshman Rekha becomes the line you never cross.</p></div>
+        <div><h5>The craft</h5><p>Shot at night on location. One actor multiplied into Ravan's ten heads in post, every head another face of the same scam.</p></div>
+      </div>
+      <div class="btns"><button class="pill" type="button" data-play="bank-of-lanka" data-cursor="Play"><span class="pi">▶</span>Watch the ad</button><a class="ghostL" href="assets/films/bank-of-lanka/poster-hq.jpg" download="Bank-of-Lanka-poster.jpg">Download poster ↓</a></div>
+      <p class="subT" style="margin-top:56px">Storyboard</p>
+      <div class="board" id="board"></div>
+      <div class="kv"><img src="assets/films/bank-of-lanka/print-sm.webp" alt="WISH print key visual: Don't hang up on your safety" loading="lazy"><div><p class="chap"><b>Print</b> · Campaign key visual</p><p>"Don't hang up on your safety." The campaign poster that closes the film names the four tactics every scam runs on: lack of verification, fear, urgency and FOMO.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================================================================= FILMS -->
 <section class="films" id="films" aria-label="Festival films">
   <div class="fPin" id="fPin">
     <div class="track" id="track">
       <div class="hIntro">
-        <p class="chap"><i></i><b>Reel 02</b> · Festival films</p>
+        <p class="chap"><i></i><b>Reel 03</b> · Festival films</p>
         <h2 class="d">Short films that won <span class="ser">gold.</span></h2>
         <p class="lede">Shorts built under pressure, shaped with friends and carried from script to screen. Move across a frame to scrub the film. Click to play it.</p>
         <dl class="stats">
@@ -628,7 +735,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
       <!-- film panels are inserted here -->
       <div class="hEnd" id="hEnd">
         <a href="#frames" data-to="frames">
-          <p class="chap"><i></i><b>Next</b> · Reel 03</p>
+          <p class="chap"><i></i><b>Next</b> · Reel 04</p>
           <h3 class="d">Every frame <span class="ser">worth keeping.</span></h3>
           <div class="collage"><img src="assets/films/kites/01-sm.webp" alt="" loading="lazy"><img src="assets/films/false-prophet/02-sm.webp" alt="" loading="lazy"><img src="assets/films/more/02-sm.webp" alt="" loading="lazy"></div>
         </a>
@@ -648,7 +755,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
   <div class="tunnel" id="tunnel">
     <div class="tStick">
       <div class="tWorld" id="tWorld"></div>
-      <div class="tTitle"><div><p class="chap"><b>Reel 03</b> · Stills</p><h2 class="d">Frame by <span class="ser">frame.</span></h2></div></div>
+      <div class="tTitle"><div><p class="chap"><b>Reel 04</b> · Stills</p><h2 class="d">Frame by <span class="ser">frame.</span></h2></div></div>
       <div class="tHud"><span>Frame <b id="tCount">01</b></span><span>Keep scrolling to fly through</span><span id="tLabel"></span></div>
     </div>
   </div>
@@ -663,7 +770,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
 
 <!-- ================================================================= ABOUT -->
 <section class="about" id="about" aria-label="About Rahul">
-  <p class="chap"><i></i><b>Reel 04</b> · About</p>
+  <p class="chap"><i></i><b>Reel 05</b> · About</p>
   <div class="aGrid">
     <figure class="aPhoto">
       <div class="ph2"><div class="phHud"><span>● Rec</span><span>Fr 001</span></div><img src="assets/img/rahul.webp" alt="Portrait of Rahul Ranwa with headphones and a camera" loading="lazy"></div>
@@ -679,6 +786,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
       <div class="laurels" id="laurels"></div>
       <p class="subT">Track record</p>
       <ol class="tl">
+        <li><span class="yr">2025</span><div><h4>Bank of Lanka · Gold</h4><p>Scam-awareness ad film for WISH. General Championship ad design, IIT Kharagpur. <a href="#ad" data-to="ad">See the case study</a></p></div></li>
         <li><span class="yr">March 2026</span><div><h4>False Prophet · Gold</h4><p>Director, D.O.P. and editor. General Championship, IIT Kharagpur. Inspired by the visual aesthetics of Wong Kar-wai and the direction style of Quentin Tarantino.</p></div></li>
         <li><span class="yr">2025</span><div><h4>Captain, Inter-IIT Cult Meet 8.0 · Gold</h4><p>Hosted by IIT Kanpur. Led IIT Kharagpur's filmmaking team and made two short films, <a href="https://youtu.be/zVaaKt3deVk" target="_blank" rel="noopener">Kites</a> and <a href="https://youtu.be/RCyoyeH5gxQ" target="_blank" rel="noopener">Mist</a>.</p></div></li>
         <li><span class="yr">2025</span><div><h4>IFP Film Festival · Silver</h4><p>Photography, national level. Led a team from IIT Kharagpur. <a href="https://www.instagram.com/p/DS4PBqODBY3/" target="_blank" rel="noopener">View submission</a></p></div></li>
@@ -716,7 +824,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
     <video id="contactVid" muted loop playsinline preload="none" poster="assets/video/surreal.webp"><source src="assets/video/surreal.mp4" type="video/mp4"></video>
     <div class="tint"></div>
   </div>
-  <p class="chap"><i></i><b>Reel 05</b> · Contact</p>
+  <p class="chap"><i></i><b>Reel 06</b> · Contact</p>
   <h2 class="cBig d">Let's make something <span class="ser">that moves.</span></h2>
   <form class="brief" id="brief" novalidate>
     <label class="fld"><span>Your name</span><input id="bName" type="text" autocomplete="name"></label>
@@ -771,10 +879,11 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
 "use strict";
 /* ================================================================= data */
 // width / height of every still, per film, in order (from the source files)
-const AR = {"gaming-insaan":[1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"raakh-ka-khet":[2.202,2.202,2.202,2.202,2.202,2.202,2.202,2.202],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"moral-conundrum":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
+const AR = {"gaming-insaan":[1.778,1.778],"bank-of-lanka":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"raakh-ka-khet":[2.202,2.202,2.202,2.202,2.202,2.202,2.202,2.202],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"moral-conundrum":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
 
 const FILMS = [
   {slug:"gaming-insaan", title:"Gaming Insaan", year:"2023", tone:"#00A8E1", tag:"Prime Video", role:"Direction team · 4th D.O.P.", yt:"_oHhgosFYrw", url:"https://youtu.be/_oHhgosFYrw", featured:true},
+  {slug:"bank-of-lanka", title:"Bank of Lanka", year:"2025", tone:"#FF2D3F", tag:"Ad · Gold", role:"Ad film for WISH", award:"Gold · GC Ad design 2025", mp4:"assets/video/gc-ad.mp4", url:"assets/video/gc-ad.mp4", featured:true},
   {slug:"false-prophet", title:"False Prophet", year:"2026", tone:"#FF4F7B", tag:"Gold · GC", role:"Director · D.O.P. · Editor", award:"Gold · General Championship, IIT Kharagpur",
     desc:"A quiet hitman and a reckless girl break away from the crime boss who controls the city, and their lives. Wong Kar-wai's colour, a little of Tarantino's nerve.", yt:"i4Z2JNPmNyk", url:"https://youtu.be/i4Z2JNPmNyk"},
   {slug:"kites", title:"Kites", year:"2025", tone:"#F0533F", tag:"Gold · Inter-IIT", role:"Captain · IIT Kharagpur team", award:"Gold · Inter-IIT Cult Meet 8.0",
@@ -796,7 +905,7 @@ FILMS.forEach(f => f.n = AR[f.slug].length);
 
 // the 16 frames on the ring, neighbours from different films
 const RING = [["gaming-insaan",1],["kites",1],["false-prophet",2],["more",1],["mist",3],["kites",4],["raakh-ka-khet",1],["false-prophet",8],
-              ["gaming-insaan",2],["mist",2],["afsanay",1],["more",2],["kites",8],["pandemonium",2],["false-prophet",5],["mist",1]];
+              ["gaming-insaan",2],["mist",2],["afsanay",1],["bank-of-lanka",1],["kites",8],["pandemonium",2],["bank-of-lanka",2],["mist",1]];
 
 const pad = n => String(n).padStart(2, "0");
 const still = (slug, n, size) => `assets/films/${slug}/${pad(n)}${size === "sm" ? "-sm" : ""}.webp`;
@@ -1071,6 +1180,7 @@ $$("[data-play]").forEach(b => b.addEventListener("click", e => { e.stopPropagat
 
 /* ================================================================ laurels */
 $("#laurels").innerHTML = [
+  ["Gold", "General Championship · Ad design", "2025", ""],
   ["Gold", "Inter-IIT Cult Meet 8.0", "2025", ""],
   ["Gold", "General Championship · IIT Kharagpur", "2026", ""],
   ["Silver", "IFP Film Festival · Photography", "2025", "silver"]
@@ -1134,9 +1244,20 @@ function paintTunnel(v) {
   }
 }
 
+/* ============================================================= ad film */
+const AD_N = 18, adSeq = $("#adSeq"), adEnd = $("#adEnd"), adFr = $("#adFr"), adTc = $("#adTc"), adLines = $$(".adL");
+adSeq.innerHTML = Array.from({length: AD_N}, (_, i) => `<img data-src="assets/films/bank-of-lanka/seq/${pad(i + 1)}.webp" alt="" decoding="async"${i === 0 ? ' class="on"' : ""}>`).join("");
+const adImgs = $$("img", adSeq);
+let adLoaded = false, adFrame = 0, adLine = -2;
+const loadAdSeq = () => { adLoaded = true; adImgs.forEach(im => { im.src = im.dataset.src; }); };
+const BEATS = [[2, "The OTP", "An SMS from the Bank of Lanka."], [4, "The visitor", "A holy man at the door wants the code."], [3, "The line", "The Lakshman Rekha she must not cross."],
+               [5, "The warning", "Someone tries to stop her."], [1, "Ten heads", "Behind the disguise, Ravan."], [7, "The bow", "The bow is drawn."]];
+$("#board").innerHTML = BEATS.map(([n, t, c], i) => `<button type="button" class="beat" data-n="${n}" data-cursor="View"><img src="${still("bank-of-lanka", n, "sm")}" alt="${esc(t)}" loading="lazy"><b><span>${pad(i + 1)}</span>${esc(t)}</b><em>${esc(c)}</em></button>`).join("");
+$("#board").addEventListener("click", e => { const b = e.target.closest(".beat"); if (!b) return; const list = Array.from({length: FILM["bank-of-lanka"].n}, (_, k) => ({slug: "bank-of-lanka", n: k + 1})); openLightbox(+b.dataset.n - 1, list); });
+
 /* ======================================================= section geometry */
 const S = {};
-const sections = ["top", "prime", "films", "frames", "about", "contact"];
+const sections = ["top", "prime", "ad", "films", "frames", "about", "contact"];
 const track = $("#track"), filmsSec = $("#films");
 let trackW = 0;
 function measure() {
@@ -1154,7 +1275,7 @@ const prog = (id, y) => { const s = S[id]; return clamp((y - s.top) / Math.max(1
 
 /* playhead */
 const ph = $("#ph"), phHead = $("#phHead");
-const PH_LABELS = {top: "00 Open", prime: "01 Prime", films: "02 Films", frames: "03 Frames", about: "04 About", contact: "05 Contact"};
+const PH_LABELS = {top: "00 Open", prime: "01 Prime", ad: "02 Ad film", films: "03 Films", frames: "04 Frames", about: "05 About", contact: "06 Contact"};
 function buildPlayhead() {
   $$(".phM", ph).forEach(m => m.remove());
   const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
@@ -1173,7 +1294,7 @@ const P = {x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0};
 const C = {x: innerWidth / 2, y: innerHeight / 2, tx: innerWidth / 2, ty: innerHeight / 2};
 const cur = $("#cur"), curL = $("#curL");
 const tcEl = $("#tc"), t0 = performance.now();
-const heroVid = $("#heroVid"), contactVid = $("#contactVid");
+const heroVid = $("#heroVid"), contactVid = $("#contactVid"), adTeaser = $("#adTeaser");
 const hudW = $("#hudW"), nameW = $("#nameW"), n1 = $("#n1"), n2 = $("#n2");
 const pPin = $("#pPin"), fBar = $("#fBar"), fNow = $("#fNow"), fName = $("#fName");
 let lastFilmIdx = -1;
@@ -1240,6 +1361,19 @@ function tick(now) {
     ps.setProperty("--iy", ((1 - info) * 30).toFixed(1) + "px");
   }
 
+  // ---------------- ad film: one head becomes ten as you scroll
+  if (S.ad && y + H > S.ad.top - H * 1.5 && y < S.ad.top + S.ad.h + H) {
+    if (!adLoaded) loadAdSeq();
+    const p = RM ? 1 : prog("ad", y);
+    const fi = Math.round(clamp(p / 0.86, 0, 1) * (AD_N - 1));
+    if (fi !== adFrame) {
+      adImgs[adFrame].classList.remove("on"); adImgs[fi].classList.add("on"); adFrame = fi;
+      adFr.textContent = pad(fi + 1); adTc.textContent = `00:${pad(Math.round(26 + fi * 22 / (AD_N - 1)))}`;
+    }
+    const li = p < 0.74 ? Math.min(3, Math.floor(p / 0.185)) : -1;
+    if (li !== adLine) { adLine = li; adLines.forEach((l, i) => l.classList.toggle("on", i === li)); adEnd.classList.toggle("on", li === -1); }
+  }
+
   // ---------------- horizontal films
   if (S.films && !mqPhone.matches && !RM && y + H > S.films.top - H && y < S.films.top + S.films.h + H) {
     const p = clamp((prog("films", y) - 0.04) / 0.96, 0, 1), span = Math.max(0, trackW - innerWidth), tx = -p * span;
@@ -1287,8 +1421,8 @@ const parallaxEls = $$("[data-depth]");
 /* =============================================================== videos */
 [heroVid, contactVid].forEach(v => v.addEventListener("playing", () => v.classList.add("playing")));
 function playVideos() {
-  const want = RM ? [] : [curSec === "top" && R.revealed ? heroVid : null, (curSec === "contact" || curSec === "about") ? contactVid : null];
-  for (const v of [heroVid, contactVid]) {
+  const want = RM ? [] : [curSec === "top" && R.revealed ? heroVid : null, (curSec === "contact" || curSec === "about") ? contactVid : null, curSec === "ad" ? adTeaser : null];
+  for (const v of [heroVid, contactVid, adTeaser]) {
     if (want.includes(v) && !document.hidden && !$("#player").classList.contains("on")) { if (v.preload === "none") { v.preload = "auto"; v.load(); } v.play().catch(() => {}); }
     else v.pause();
   }
@@ -1402,14 +1536,15 @@ function openFilm(slug) {
   const f = FILM[slug]; if (!f || f.hidden) return;
   lastFocus = document.activeElement;
   $("#pTitle").textContent = f.title;
-  const link = $("#pLink"); link.href = f.url; link.textContent = (f.yt ? "YouTube" : "Drive") + " ↗";
+  const link = $("#pLink"); link.href = f.url; link.textContent = (f.yt ? "YouTube" : f.drive ? "Drive" : "Open file") + " ↗";
   const src = f.yt ? `https://www.youtube-nocookie.com/embed/${f.yt}?autoplay=1&rel=0&playsinline=1&modestbranding=1` : `https://drive.google.com/file/d/${f.drive}/preview`;
   pVid.style.setProperty("--tone", f.tone);
-  pVid.innerHTML = `<iframe src="${src}" title="${esc(f.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  pVid.innerHTML = f.mp4 ? `<video src="${f.mp4}" controls autoplay playsinline></video>`
+    : `<iframe src="${src}" title="${esc(f.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
   player.classList.add("on");
   if (lenis) lenis.stop(); else body.style.overflow = "hidden";
   $("#pClose").focus();
-  heroVid.pause(); contactVid.pause();
+  heroVid.pause(); contactVid.pause(); adTeaser.pause();
 }
 function closeFilm() {
   player.classList.remove("on"); pVid.innerHTML = "";

@@ -2,3 +2,5 @@ _ref/
 .claude/
 .gstack/
 assets/manifest.json
+*.mp4
+!assets/video/*.mp4
