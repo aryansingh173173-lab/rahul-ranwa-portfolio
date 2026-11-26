@@ -1,0 +1,7 @@
+_ref/
+.claude/
+.gstack/
+.git/
+assets/manifest.json
+*.mp4
+!assets/video/*.mp4
