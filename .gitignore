@@ -4,3 +4,6 @@ _ref/
 assets/manifest.json
 *.mp4
 !assets/video/*.mp4
+
+.vercel
+.env*
