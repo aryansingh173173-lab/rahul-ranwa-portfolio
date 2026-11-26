@@ -321,9 +321,7 @@ body.entered .tag{opacity:1;transform:none}
 .tPlay{position:absolute;left:20px;bottom:18px;z-index:1;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .tPlay i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--rec);font-style:normal;font-size:16px;transition:transform .5s var(--ease)}
 .teaser:hover .tPlay i{transform:scale(1.12)}
-.acCols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px}
-.acCols h5{margin:0 0 8px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:28px}
-.acCols p{margin:0;font-size:15px;line-height:1.65;color:var(--soft)}
+.acLine{margin:30px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(28px,2.6vw,40px);line-height:1.15}
 .board{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .beat{display:block;text-align:left}
 .beat img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;filter:brightness(1.15);transition:transform .6s var(--ease)}
@@ -331,10 +329,6 @@ body.entered .tag{opacity:1;transform:none}
 .beat b{display:block;margin-top:10px;font-family:var(--disp);font-weight:800;font-stretch:70%;font-size:22px;text-transform:uppercase}
 .beat b span{font-family:var(--mono);font-size:10px;font-weight:400;font-stretch:100%;letter-spacing:.16em;color:var(--rec);margin-right:8px;vertical-align:middle}
 .beat em{display:block;margin-top:4px;font-style:normal;font-size:13.5px;line-height:1.5;color:var(--soft)}
-.kv{display:flex;gap:22px;align-items:center;margin-top:34px;padding:18px;border-radius:12px;background:var(--ink3);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
-.kv img{width:120px;height:auto;border-radius:4px;flex:0 0 auto}
-.kv p{margin:8px 0 0;font-size:14.5px;line-height:1.6;color:var(--soft)}
-.kv .chap{margin:0}
 .mVid video{position:absolute;inset:0;width:100%;height:100%;background:#000}
 
 /* strips */
@@ -521,9 +515,7 @@ body.entered .tag{opacity:1;transform:none}
   .adCase{padding:90px 16px 60px}
   .acGrid{grid-template-columns:1fr;gap:40px}
   .acPoster{position:relative;top:auto;max-width:440px}
-  .acCols{grid-template-columns:1fr}
   .board{grid-template-columns:repeat(2,1fr)}
-  .kv{flex-direction:column;align-items:flex-start}
   .sheet{padding:80px 10px 30px}
   .shHead{padding:0 6px}
   .chips{justify-content:flex-start}
@@ -602,8 +594,8 @@ html.rm .adPin{position:relative}
   <a class="brand" href="#top" data-to="top"><i></i>Rahul Ranwa</a>
   <nav class="links" aria-label="Sections">
     <a href="#prime" data-to="prime">Prime</a>
-    <a href="#ad" data-to="ad">Ad film</a>
     <a href="#films" data-to="films">Films</a>
+    <a href="#ad" data-to="ad">Ad film</a>
     <a href="#frames" data-to="frames">Frames</a>
     <a href="#about" data-to="about">About</a>
     <a href="#contact" data-to="contact">Let's talk</a>
@@ -612,8 +604,8 @@ html.rm .adPin{position:relative}
 </header>
 <div class="menu" id="menu">
   <a href="#prime" data-to="prime"><span>01</span>Prime</a>
-  <a href="#ad" data-to="ad"><span>02</span>Ad film</a>
-  <a href="#films" data-to="films"><span>03</span>Films</a>
+  <a href="#films" data-to="films"><span>02</span>Films</a>
+  <a href="#ad" data-to="ad"><span>03</span>Ad film</a>
   <a href="#frames" data-to="frames"><span>04</span>Frames</a>
   <a href="#about" data-to="about"><span>05</span>About</a>
   <a href="#contact" data-to="contact"><span>06</span>Contact</a>
@@ -678,12 +670,40 @@ html.rm .adPin{position:relative}
   </div>
 </section>
 
+<!-- ================================================================= FILMS -->
+<section class="films" id="films" aria-label="Short films">
+  <div class="fPin" id="fPin">
+    <div class="track" id="track">
+      <div class="hIntro">
+        <p class="chap"><i></i><b>Reel 02</b> · Short films</p>
+        <h2 class="d">Short films that won <span class="ser">gold.</span></h2>
+        <p class="lede">Shorts built under pressure, shaped with friends and carried from script to screen. Move across a frame to scrub the film. Click to play it.</p>
+        <dl class="stats">
+          <div><dt>Short films</dt><dd>15+</dd></div>
+          <div><dt>Years on set</dt><dd>4+</dd></div>
+          <div><dt>Freelance clients</dt><dd>10+</dd></div>
+        </dl>
+        <p class="hint"><i></i>Keep scrolling</p>
+      </div>
+      <!-- film panels are inserted here -->
+      <div class="hEnd" id="hEnd">
+        <a href="#ad" data-to="ad">
+          <p class="chap"><i></i><b>Next</b> · Reel 03 · Ad film</p>
+          <h3 class="d">Ten heads. <span class="ser">One OTP.</span></h3>
+          <div class="collage"><img src="assets/films/bank-of-lanka/02-sm.webp" alt="" loading="lazy"><img src="assets/films/bank-of-lanka/01-sm.webp" alt="" loading="lazy"><img src="assets/films/bank-of-lanka/06-sm.webp" alt="" loading="lazy"></div>
+        </a>
+      </div>
+    </div>
+    <div class="fHud"><span>Film <b id="fNow">01</b> / <span id="fTot">07</span></span><span class="bar2"><i id="fBar"></i></span><span id="fName"></span></div>
+  </div>
+</section>
+
 <!-- ==================================================================== AD -->
 <section class="ad" id="ad" aria-label="Ad film: Bank of Lanka">
   <div class="adPin" id="adPin">
     <div class="adSeq" id="adSeq"></div>
     <div class="adShade"></div>
-    <p class="chap adChap"><i></i><b>Reel 02</b> · Ad film · WISH</p>
+    <p class="chap adChap"><i></i><b>Reel 03</b> · Ad film · WISH</p>
     <div class="adLines" aria-hidden="true">
       <h3 class="adL d">Blind trust.<small>Scam tactic 01 / 04 · Lack of verification</small></h3>
       <h3 class="adL d">Fear.<small>Scam tactic 02 / 04</small></h3>
@@ -709,44 +729,11 @@ html.rm .adPin{position:relative}
         <video id="adTeaser" muted loop playsinline preload="none" poster="assets/films/bank-of-lanka/08.webp"><source src="assets/video/gc-teaser.mp4" type="video/mp4"></video>
         <span class="tPlay"><i>▶</i>Watch the ad · 0:59 · sound on</span>
       </button>
-      <div class="acCols">
-        <div><h5>The brief</h5><p>Get people to stop handing over OTPs, CVVs and personal details on calls. One line had to stick: banks will never ask for them.</p></div>
-        <div><h5>The idea</h5><p>Retell the Ramayana as a phone scam. Sita gets an OTP from the Bank of Lanka, a holy man at the door wants it, and the Lakshman Rekha becomes the line you never cross.</p></div>
-        <div><h5>The craft</h5><p>Shot at night on location. One actor multiplied into Ravan's ten heads in post, every head another face of the same scam.</p></div>
-      </div>
+      <p class="acLine">The Ramayana, retold as a phone scam.</p>
       <div class="btns"><button class="pill" type="button" data-play="bank-of-lanka" data-cursor="Play"><span class="pi">▶</span>Watch the ad</button><a class="ghostL" href="assets/films/bank-of-lanka/poster-hq.jpg" download="Bank-of-Lanka-poster.jpg">Download poster ↓</a></div>
-      <p class="subT" style="margin-top:56px">Storyboard</p>
+      <p class="subT" style="margin-top:52px">Storyboard</p>
       <div class="board" id="board"></div>
-      <div class="kv"><img src="assets/films/bank-of-lanka/print-sm.webp" alt="WISH print key visual: Don't hang up on your safety" loading="lazy"><div><p class="chap"><b>Print</b> · Campaign key visual</p><p>"Don't hang up on your safety." The campaign poster that closes the film names the four tactics every scam runs on: lack of verification, fear, urgency and FOMO.</p></div></div>
     </div>
-  </div>
-</section>
-
-<!-- ================================================================= FILMS -->
-<section class="films" id="films" aria-label="Festival films">
-  <div class="fPin" id="fPin">
-    <div class="track" id="track">
-      <div class="hIntro">
-        <p class="chap"><i></i><b>Reel 03</b> · Festival films</p>
-        <h2 class="d">Short films that won <span class="ser">gold.</span></h2>
-        <p class="lede">Shorts built under pressure, shaped with friends and carried from script to screen. Move across a frame to scrub the film. Click to play it.</p>
-        <dl class="stats">
-          <div><dt>Short films</dt><dd>15+</dd></div>
-          <div><dt>Years on set</dt><dd>4+</dd></div>
-          <div><dt>Freelance clients</dt><dd>10+</dd></div>
-        </dl>
-        <p class="hint"><i></i>Keep scrolling</p>
-      </div>
-      <!-- film panels are inserted here -->
-      <div class="hEnd" id="hEnd">
-        <a href="#frames" data-to="frames">
-          <p class="chap"><i></i><b>Next</b> · Reel 04</p>
-          <h3 class="d">Every frame <span class="ser">worth keeping.</span></h3>
-          <div class="collage"><img src="assets/films/kites/01-sm.webp" alt="" loading="lazy"><img src="assets/films/false-prophet/02-sm.webp" alt="" loading="lazy"><img src="assets/films/more/02-sm.webp" alt="" loading="lazy"></div>
-        </a>
-      </div>
-    </div>
-    <div class="fHud"><span>Film <b id="fNow">01</b> / <span id="fTot">07</span></span><span class="bar2"><i id="fBar"></i></span><span id="fName"></span></div>
   </div>
 </section>
 
@@ -884,7 +871,7 @@ html.rm .adPin{position:relative}
 "use strict";
 /* ================================================================= data */
 // width / height of every still, per film, in order (from the source files)
-const AR = {"gaming-insaan":[1.778,1.778],"bank-of-lanka":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"raakh-ka-khet":[2.202,2.202,2.202,2.202,2.202,2.202,2.202,2.202],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"moral-conundrum":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
+const AR = {"gaming-insaan":[1.778,1.778],"bank-of-lanka":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
 
 const FILMS = [
   {slug:"gaming-insaan", title:"Gaming Insaan", year:"2023", tone:"#00A8E1", tag:"Prime Video", role:"Direction team · 4th D.O.P.", yt:"_oHhgosFYrw", url:"https://youtu.be/_oHhgosFYrw", featured:true},
@@ -897,19 +884,15 @@ const FILMS = [
     desc:"Written, shot and cut inside a 51-hour window at the same meet. Split-second calls, one crew, no second chances.", yt:"RCyoyeH5gxQ", url:"https://youtu.be/RCyoyeH5gxQ"},
   {slug:"afsanay", title:"Afsanay", year:"2024", tone:"#F2A54A", tag:"Inter-IIT 7.0", role:"Co-director, with Aditya Garg",
     desc:"IIT Kharagpur's short film for Inter-IIT Cultural Meet 7.0, made with TFPS.", yt:"oq31X5R87Ys", url:"https://youtu.be/oq31X5R87Ys"},
-  {slug:"raakh-ka-khet", title:"Raakh Ka Khet", year:"2025", tone:"#F7931E", tag:"IFP · 50 hr", role:"TFPS, IIT Kharagpur",
-    desc:"Made for the IFP 50-hour filmmaking challenge.", drive:"1OUK3jURZ9x8_Hrokyx05UNqSokzWUHOY", url:"https://drive.google.com/file/d/1OUK3jURZ9x8_Hrokyx05UNqSokzWUHOY/view"},
   {slug:"pandemonium", title:"Pandemonium", year:"2024", tone:"#DAD5CD", tag:"RP Hall", role:"RP Hall, IIT Kharagpur", award:"Gold · Highest marks in scriptwriting",
     desc:"A General Championship short for RP Hall of Residence, about chaos and what it costs.", drive:"143daOa3p6KJm0nST7pgxrYdhoS-c9enh", url:"https://drive.google.com/file/d/143daOa3p6KJm0nST7pgxrYdhoS-c9enh/view"},
-  {slug:"moral-conundrum", title:"Moral Conundrum", year:"2024", tone:"#E7A04B", tag:"TFPS", role:"TFPS, IIT Kharagpur",
-    desc:"A suspense thriller about tension, secrets and the quiet psychology underneath.", yt:"ZWhgOI2la6k", url:"https://www.youtube.com/watch?v=ZWhgOI2la6k"},
   {slug:"more", title:"Selected frames", year:"", tone:"#EEE7DC", tag:"Still", hidden:true}
 ];
 const FILM = Object.fromEntries(FILMS.map(f => [f.slug, f]));
 FILMS.forEach(f => f.n = AR[f.slug].length);
 
 // the 16 frames on the ring, neighbours from different films
-const RING = [["gaming-insaan",1],["kites",1],["false-prophet",2],["more",1],["mist",3],["kites",4],["raakh-ka-khet",1],["false-prophet",8],
+const RING = [["gaming-insaan",1],["kites",1],["false-prophet",2],["more",1],["mist",3],["kites",4],["pandemonium",1],["false-prophet",8],
               ["gaming-insaan",2],["mist",2],["afsanay",1],["bank-of-lanka",1],["kites",8],["pandemonium",2],["bank-of-lanka",2],["mist",1]];
 
 const pad = n => String(n).padStart(2, "0");
@@ -1257,12 +1240,12 @@ let adLoaded = false, adFrame = 0, adLine = -2;
 const loadAdSeq = () => { adLoaded = true; adImgs.forEach(im => { im.src = im.dataset.src; }); };
 const BEATS = [[2, "The OTP", "An SMS from the Bank of Lanka."], [4, "The visitor", "A holy man at the door wants the code."], [3, "The line", "The Lakshman Rekha she must not cross."],
                [5, "The warning", "Someone tries to stop her."], [1, "Ten heads", "Behind the disguise, Ravan."], [7, "The bow", "The bow is drawn."]];
-$("#board").innerHTML = BEATS.map(([n, t, c], i) => `<button type="button" class="beat" data-n="${n}" data-cursor="View"><img src="${still("bank-of-lanka", n, "sm")}" alt="${esc(t)}" loading="lazy"><b><span>${pad(i + 1)}</span>${esc(t)}</b><em>${esc(c)}</em></button>`).join("");
+$("#board").innerHTML = BEATS.map(([n, t, c], i) => `<button type="button" class="beat" data-n="${n}" data-cursor="View"><img src="${still("bank-of-lanka", n, "sm")}" alt="${esc(t)}" loading="lazy"><b><span>${pad(i + 1)}</span>${esc(t)}</b></button>`).join("");
 $("#board").addEventListener("click", e => { const b = e.target.closest(".beat"); if (!b) return; const list = Array.from({length: FILM["bank-of-lanka"].n}, (_, k) => ({slug: "bank-of-lanka", n: k + 1})); openLightbox(+b.dataset.n - 1, list); });
 
 /* ======================================================= section geometry */
 const S = {};
-const sections = ["top", "prime", "ad", "films", "frames", "about", "contact"];
+const sections = ["top", "prime", "films", "ad", "frames", "about", "contact"];
 const track = $("#track"), filmsSec = $("#films");
 let trackW = 0;
 function measure() {
@@ -1280,7 +1263,7 @@ const prog = (id, y) => { const s = S[id]; return clamp((y - s.top) / Math.max(1
 
 /* playhead */
 const ph = $("#ph"), phHead = $("#phHead");
-const PH_LABELS = {top: "00 Open", prime: "01 Prime", ad: "02 Ad film", films: "03 Films", frames: "04 Frames", about: "05 About", contact: "06 Contact"};
+const PH_LABELS = {top: "00 Open", prime: "01 Prime", ad: "03 Ad film", films: "02 Films", frames: "04 Frames", about: "05 About", contact: "06 Contact"};
 function buildPlayhead() {
   $$(".phM", ph).forEach(m => m.remove());
   const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
