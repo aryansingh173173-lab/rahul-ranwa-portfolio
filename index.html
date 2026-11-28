@@ -719,6 +719,9 @@ const FILMS = [
     desc:"A series for Amazon MX Player, featuring Triggered Insaan. I worked in the direction team and picked up a camera as 4th D.O.P. whenever the unit needed one.", yt:"_oHhgosFYrw", url:"https://youtu.be/_oHhgosFYrw"},
   {slug:"kites", title:"Kites", year:"2025", tone:"#F0533F", tag:"Gold · Inter-IIT", role:"Captain · IIT Kharagpur team", award:"Gold · Inter-IIT Cult Meet 8.0",
     desc:"Made at Inter-IIT Cult Meet 8.0, hosted by IIT Kanpur, where I captained IIT Kharagpur's filmmaking team. Still the one I'd show you first.", yt:"zVaaKt3deVk", url:"https://youtu.be/zVaaKt3deVk"},
+  {slug:"showreel", title:"Showreel", year:"2026", tone:"#F2C14E", tag:"Reel", role:"Selected work",
+    desc:"Short films, ads and set work, cut into one reel.", drive:"10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR", url:"https://drive.google.com/file/d/10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR/view",
+    frames:[["more",2],["kites",4],["bank-of-lanka",7],["false-prophet",4],["mist",5],["afsanay",1],["more",1],["pandemonium",3]]},
   {slug:"bank-of-lanka", title:"Bank of Lanka", year:"2025", tone:"#FF2D3F", tag:"Ad · Gold", role:"Ad film for WISH", award:"Gold · General Championship ad design, IIT Kharagpur",
     desc:"The Ramayana, retold as a phone scam. A scam-awareness ad for WISH: never share your OTP.", poster:"assets/films/bank-of-lanka/poster-hq.jpg", yt:"clc2izcmBho", url:"https://youtu.be/clc2izcmBho"},
   {slug:"mist", title:"Mist", year:"2025", tone:"#8FD0C0", tag:"Gold · Inter-IIT", role:"Captain · IIT Kharagpur team", award:"Gold · Inter-IIT Cult Meet 8.0",
@@ -730,7 +733,9 @@ const FILMS = [
   {slug:"more", title:"Selected frames", year:"", tone:"#EEE7DC", tag:"Still", hidden:true}
 ];
 const FILM = Object.fromEntries(FILMS.map(f => [f.slug, f]));
-FILMS.forEach(f => f.n = AR[f.slug].length);
+FILMS.forEach(f => f.n = f.frames ? f.frames.length : AR[f.slug].length);
+// frame k (0-based) of a film; a reel points at frames of other films
+const frameOf = (f, k) => f.frames ? {slug: f.frames[k][0], n: f.frames[k][1]} : {slug: f.slug, n: k + 1};
 
 // the 16 frames on the ring, neighbours from different films
 const RING = [["gaming-insaan",1],["kites",1],["false-prophet",2],["more",1],["mist",3],["kites",4],["pandemonium",1],["false-prophet",8],
@@ -763,7 +768,7 @@ const easeOut = bez(.22, 1, .36, 1);
 // every still, interleaved film by film so neighbours never share a film
 const ALL = (() => {
   const out = [], max = Math.max(...FILMS.map(f => f.n));
-  for (let n = 1; n <= max; n++) for (const f of FILMS) if (n <= f.n) out.push({slug: f.slug, n});
+  for (let n = 1; n <= max; n++) for (const f of FILMS) if (!f.frames && n <= f.n) out.push({slug: f.slug, n});
   return out;
 })();
 
@@ -946,8 +951,8 @@ const laurelSVG = (() => {
 })();
 const panelsHTML = shownFilms.map((f, i) => {
   const n = f.n;
-  const imgs = Array.from({length: n}, (_, k) => `<img ${k === 0 ? `src="${still(f.slug, 1)}"` : `data-src="${still(f.slug, k + 1)}"`} alt="${k === 0 ? "Still from " + esc(f.title) : ""}" loading="lazy" decoding="async" draggable="false"${k === 0 ? ' class="on"' : ""}>`).join("");
-  const thumbs = n > 1 ? `<div class="thumbs">${Array.from({length: Math.min(n, 6)}, (_, k) => `<button type="button" data-k="${k}" aria-label="Frame ${k + 1} of ${esc(f.title)}"${k === 0 ? ' class="on"' : ""}><img src="${still(f.slug, k + 1, "sm")}" alt="" loading="lazy"></button>`).join("")}</div>` : "";
+  const imgs = Array.from({length: n}, (_, k) => `<img ${k === 0 ? `src="${still(frameOf(f, 0).slug, frameOf(f, 0).n)}"` : `data-src="${still(frameOf(f, k).slug, frameOf(f, k).n)}"`} alt="${k === 0 ? "Still from " + esc(f.title) : ""}" loading="lazy" decoding="async" draggable="false"${k === 0 ? ' class="on"' : ""}>`).join("");
+  const thumbs = n > 1 ? `<div class="thumbs">${Array.from({length: Math.min(n, 6)}, (_, k) => `<button type="button" data-k="${k}" aria-label="Frame ${k + 1} of ${esc(f.title)}"${k === 0 ? ' class="on"' : ""}><img src="${still(frameOf(f, k).slug, frameOf(f, k).n, "sm")}" alt="" loading="lazy"></button>`).join("")}</div>` : "";
   return `<article class="hf" data-slug="${f.slug}" style="--tone:${f.tone}" aria-labelledby="ft-${f.slug}">
     <div class="hfMedia" data-cursor="Play"><div class="hfImgs">${imgs}</div><div class="hfShade"></div></div>
     <div class="hfTop"><span class="hfNo">${pad(i + 1)}</span><div class="hfTR"><span class="hfFr">Fr <b>01</b> / ${pad(n)} · ${f.yt ? "YouTube" : "Drive"}</span>${thumbs}</div></div>
@@ -985,7 +990,7 @@ const panels = $$(".hf").map(art => {
   media.addEventListener("click", () => openFilm(slug));
   thumbs.forEach((t, i) => {
     t.addEventListener("mouseenter", () => { st.load(); st.set(i); });
-    t.addEventListener("click", () => openLightbox(i, Array.from({length: f.n}, (_, k) => ({slug, n: k + 1}))));
+    t.addEventListener("click", () => openLightbox(i, Array.from({length: f.n}, (_, k) => frameOf(f, k))));
   });
   return st;
 });
@@ -1017,7 +1022,7 @@ $("#laurels").innerHTML = [
 
 /* ============================================================ contact sheet */
 const negs = $("#negs"), chips = $("#chips");
-$("#gCount").innerHTML = `<i></i><b>${ALL.length} frames</b> · ${FILMS.length - 1} films`;
+$("#gCount").innerHTML = `<i></i><b>${ALL.length} frames</b> · ${FILMS.filter(f => !f.hidden && !f.frames).length} films`;
 let filter = "all", perRow = 0, sheetOpen = false;
 const SHEET_CAP = 24;
 const CIRCLE = `<svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M28 70 C 6 50, 30 12, 96 8 C 150 5, 196 22, 192 52 C 189 82, 130 96, 86 94 C 40 92, 8 78, 14 50 C 18 32, 40 20, 66 14"/></svg>`;
@@ -1038,7 +1043,7 @@ function renderSheet() {
   $("#shMoreB").textContent = `More frames · ${full.length - SHEET_CAP} left`;
 }
 const cellIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); cellIO.unobserve(e.target); } }), {rootMargin: "0px 0px -6% 0px"});
-chips.innerHTML = [{slug: "all", title: "All", n: ALL.length}, ...FILMS].map(f => `<button type="button" data-f="${f.slug}" aria-pressed="${f.slug === "all"}">${esc(f.title)}<sup>${f.n}</sup></button>`).join("");
+chips.innerHTML = [{slug: "all", title: "All", n: ALL.length}, ...FILMS.filter(f => !f.frames)].map(f => `<button type="button" data-f="${f.slug}" aria-pressed="${f.slug === "all"}">${esc(f.title)}<sup>${f.n}</sup></button>`).join("");
 chips.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
   filter = b.dataset.f;
