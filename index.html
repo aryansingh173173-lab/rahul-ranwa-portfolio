@@ -710,7 +710,7 @@ html.rm .fHud,html.rm .tunnel,html.rm .loader{display:none}
 "use strict";
 /* ================================================================= data */
 // width / height of every still, per film, in order (from the source files)
-const AR = {"gaming-insaan":[1.778,1.778],"bank-of-lanka":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
+const AR = {"showreel":[2.365,2.021,1.333,2.353,2.021,1.333,2.365,2.353],"gaming-insaan":[1.778,1.778],"bank-of-lanka":[1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778,1.778],"false-prophet":[2.623,2.623,2.347,2.623,2.623,2.347,2.623,2.347],"kites":[1.323,1.33,1.328,1.324,1.253,1.316,1.324,1.333,1.319,1.33,1.324,1.331,1.331,1.319,1.324,1.322,1.525,1.244,1.589,1.319,1.319,1.319],"mist":[2.393,2.379,2.381,2.404,2.39,2.481,2.364,2.373,2.495,2.411,2.336,2.336,2.336,2.336,2.336,2.336],"afsanay":[1.778],"pandemonium":[1.333,1.333,1.333,1.333,1.333,1.333,1.333,1.596],"more":[2.373,2.302,1.778,1.778,1.778,2.367,1.778,2.398,1.778,2.304,2.355,2.457,1.778,2.321,2.439,2.5]};
 
 const FILMS = [
   {slug:"false-prophet", title:"False Prophet", year:"2026", tone:"#FF4F7B", tag:"Gold · GC", role:"Director · D.O.P. · Editor", award:"Gold · General Championship, IIT Kharagpur",
@@ -719,9 +719,8 @@ const FILMS = [
     desc:"A series for Amazon MX Player, featuring Triggered Insaan. I worked in the direction team and picked up a camera as 4th D.O.P. whenever the unit needed one.", yt:"_oHhgosFYrw", url:"https://youtu.be/_oHhgosFYrw"},
   {slug:"kites", title:"Kites", year:"2025", tone:"#F0533F", tag:"Gold · Inter-IIT", role:"Captain · IIT Kharagpur team", award:"Gold · Inter-IIT Cult Meet 8.0",
     desc:"Made at Inter-IIT Cult Meet 8.0, hosted by IIT Kanpur, where I captained IIT Kharagpur's filmmaking team. Still the one I'd show you first.", yt:"zVaaKt3deVk", url:"https://youtu.be/zVaaKt3deVk"},
-  {slug:"showreel", title:"Showreel", year:"2026", tone:"#F2C14E", tag:"Reel", role:"Selected work",
-    desc:"Short films, ads and set work, cut into one reel.", drive:"10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR", url:"https://drive.google.com/file/d/10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR/view",
-    frames:[["more",2],["kites",4],["bank-of-lanka",7],["false-prophet",4],["mist",5],["afsanay",1],["more",1],["pandemonium",3]]},
+  {slug:"showreel", title:"Showreel", year:"2026", tone:"#F2C14E", tag:"Reel", role:"Cinematography · Direction",
+    desc:"Director's showreel. Three and a half minutes of my work, cut into one reel.", drive:"10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR", url:"https://drive.google.com/file/d/10iDnmXWQUF-rjADKbBAkIDhFYYSMj_HR/view"},
   {slug:"bank-of-lanka", title:"Bank of Lanka", year:"2025", tone:"#FF2D3F", tag:"Ad · Gold", role:"Ad film for WISH", award:"Gold · General Championship ad design, IIT Kharagpur",
     desc:"The Ramayana, retold as a phone scam. A scam-awareness ad for WISH: never share your OTP.", poster:"assets/films/bank-of-lanka/poster-hq.jpg", yt:"clc2izcmBho", url:"https://youtu.be/clc2izcmBho"},
   {slug:"mist", title:"Mist", year:"2025", tone:"#8FD0C0", tag:"Gold · Inter-IIT", role:"Captain · IIT Kharagpur team", award:"Gold · Inter-IIT Cult Meet 8.0",
